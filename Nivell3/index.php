@@ -29,6 +29,7 @@
         private $saldoCompte;
         private $importeDeposito;
         private $importeRetiradaDinero;
+        private $totalCuenta;
 
         //metodes
         //Constructor que inicialitzi els atributs.
@@ -48,18 +49,28 @@
         public function withdraw($importeRetiradaDinero){
             //permet retirar una quantitat del compte sempre que hi hagi saldo, si no n'hi ha, el mètode haurà de retornar un missatge d'error.
             if(($this->saldoCompte > 0)&&(($this->saldoCompte-$importeRetiradaDinero) > 0 )){
-                $this->saldoCompte = $this->saldoCompte + $this->importeRetiradaDinero;
-                echo "Gracias por trabajar con nosotros, hemos retirado ". $importeDeposito."de tu cuenta";
+                $this->saldoCompte = $this->saldoCompte - $importeRetiradaDinero;
+                return $importeRetiradaDinero;
             } else {
                 echo "Importe suficiente en la cuenta para retirar este importe";
             }
             
         }
+
+        public function ensenyaTotalCompte(){
+            
+            return $this->saldoCompte;
+        }
         
     }
 
     $cuenta = new Account(246, "Mari", "Perez Garcia",0);
-    echo $cuenta->deposit(1000);
+    echo "El deposito hecho: ".$cuenta->deposit(1000). "<br/>";
+    echo "EL total de la cuenta es: ".$cuenta->ensenyaTotalCompte(). "<br/>";
+    echo "Retiro dinero: ".$cuenta->withdraw(100). "<br/>";
+    echo "EL total de la cuenta es: ".$cuenta->ensenyaTotalCompte(). "<br/>";
+    echo "El deposito hecho: ".$cuenta->deposit(10). "<br/>";
+    echo "EL total de la cuenta es: ".$cuenta->ensenyaTotalCompte(). "<br/>";
 
     ?>
 </body>

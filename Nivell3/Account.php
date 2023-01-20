@@ -1,4 +1,5 @@
 
+
     <?php
 
     /*Crea un projecte Bancs, afegeix al projecte una classe Account amb atributs per número de compte, nom i cognoms del client/a i el saldo actual. Defineix en la classe els següents mètodes:

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +11,10 @@
 <body>
     <h1>Este es mi Banco</h1>
     <p>Bienvenida a tu banco</p>
-    <div>
-        <h2>Quiero ingresar dinero:</h2>
-    </div>
-    <div>
-        <h2>Quiero retirar dinero:</h2>
-    </div>
-    <div>
-        <h2>El importe total:</h2>
-    </div>
+    <?php
+    include 'Account.php';
+    $cuenta = new Account(246, "Mari", "Perez Garcia",0);
+    ?>
+
 </body>
 </html>

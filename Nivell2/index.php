@@ -2,13 +2,22 @@
 <?php
 require_once('PokerDice.php');
 
-    $juego  = new PokerDice();
-    $numeroTiradas = $juego->getTotalThrows();
+$tiradas = array();
+for ($i = 0; $i < 5; $i++) {
+    $tirada = new PokerDice();
+    array_push($tiradas, $tirada);
+}
 
-    echo "Las 5 tiradas son: ";
+foreach ($tiradas as $tirada) {
+    $dado = $tirada->throw();
+    $cara = $tirada->shapeName();
+    $tirada->addThrow($cara);
+}
 
-    for($i=0; $i<$numeroTiradas; $i++){
-        $tirada = $juego->shapeName(); 
-        echo $tirada. "<br/>";
-    }
+foreach ($tiradas as $tirada) {
+    $todasTiradas = $tirada->getTotalThrows();
+    var_dump($todasTiradas);
+}
+
+
 ?>

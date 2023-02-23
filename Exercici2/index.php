@@ -5,12 +5,12 @@ require("Triangle.php");
 require("Rectangle.php");
 
 $triangle = new Triangle;
-$resultado = $triangle->calculaArea(10,10);
-$triangle->imprimirResultado($resultado);
+$triangle->calculaArea(10,10);
+$triangle->imprimirResultado();
 
 $rectangle = new Rectangle;
-$resultado = $rectangle->calculaArea(10,10);
-$rectangle->imprimirResultado($resultado);
+$rectangle->calculaArea(10,10);
+$rectangle->imprimirResultado();
 
 
 ?>
